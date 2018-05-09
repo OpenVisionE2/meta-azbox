@@ -7,8 +7,6 @@ KV = "3.9.2"
 SRCDATE = "14092013"
 SRCDATE_azboxhd = "16092013"
 
-KERNEL_IMAGE_MAXSIZE_azboxhd = "6815744"
-
 DEPENDS = "genromfs-native virtual/${TARGET_PREFIX}gcc"
 
 inherit kernel machine_kernel_pr
