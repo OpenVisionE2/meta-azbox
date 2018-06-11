@@ -4,6 +4,8 @@ PRIORITY = "required"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
+COMPATIBLE_MACHINE = "(azboxhd|azboxme|azboxminime)"
+
 SRCDATE = "3.11-1"
 SRCDATE_azboxhd = "2.8-3"
 
