@@ -4,6 +4,8 @@ PRIORITY = "optional"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
+COMPATIBLE_MACHINE = "(azboxhd|azboxme|azboxminime)"
+
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 SRC_URI = "http://source.mynonpublic.com/azbox/azbox-blindscan-utils-${MACHINE}-${PV}.tar.bz2;name=azbox-blind-${MACHINE}"
 
