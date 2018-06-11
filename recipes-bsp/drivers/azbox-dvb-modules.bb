@@ -5,6 +5,8 @@ LICENSE = "CLOSED"
 require conf/license/license-close.inc
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
+COMPATIBLE_MACHINE = "(azboxhd|azboxme|azboxminime)"
+
 KV = "3.9.2-opensat"
 
 SRCDATE = "17092013"
