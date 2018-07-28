@@ -1,13 +1,13 @@
 # We know about rtc
 include conf/machine/include/build-extras.inc
 
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS = " \
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     azbox-dvb-modules \
     "
 
 DVBPROVIDER = "kernel"
 
-MACHINE_EXTRA_RRECOMMENDS = " \
+MACHINE_EXTRA_RRECOMMENDS += "\
     azbox-compat \
     azbox-mrua \
     "
