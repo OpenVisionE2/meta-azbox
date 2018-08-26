@@ -1,1 +1,0 @@
-SRC_URI = "${@bb.utils.contains("MACHINE_FEATURES", "azbox", "git://github.com/dazulrich/gstreamer1.0-plugin-multibox-dvbmediasink.git;branch=oatv6-dev;protocol=https", "git://github.com/OpenPLi/gst-plugin-dvbmediasink.git;branch=gst-1.0", d)}"
