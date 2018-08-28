@@ -3,7 +3,3 @@ IMAGE_INSTALL_remove += "\
 	ofgwrite \
 	", "", d)} \
 	"
-
-IMAGE_INSTALL_remove_azboxhd += "\
-	samba-base \
-	"
