@@ -2,7 +2,7 @@
 include conf/machine/include/build-extras.inc
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    azbox-dvb-modules \
+    azbox-dvb-modules-331 \
     "
 
 DVBPROVIDER = "kernel"
@@ -17,7 +17,7 @@ DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dtsdownmix --with
 MACHINE_FEATURES += " azbox alsa usbhost wifi nl80211 3dtv switchoff lpcm textlcd 32bpp hdtv dvbapi5 dvb-c blindscan-dvbs"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-azbox"
-PREFERRED_VERSION_linux-azbox = "3.9.2"
+PREFERRED_VERSION_linux-azbox = "3.3.1"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "azbox-blindscan-dvbs-utils"
 PREFERRED_VERSION_rt8812au = "4.3.14"
 

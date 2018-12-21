@@ -5,20 +5,16 @@ LICENSE = "CLOSED"
 require conf/license/license-close.inc
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "(azboxhd|azboxme|azboxminime)"
+COMPATIBLE_MACHINE = "(azboxme|azboxminime)"
 
 KV = "3.9.2-opensat"
 
 SRCDATE = "17092013"
-SRCDATE_azboxhd = "19092013"
 
 PV = "${KV}+${SRCDATE}"
 
 SRC_URI = "http://source.mynonpublic.com/azbox/${MACHINE}-dvb-modules-${KV}-oe-core-${SRCDATE}.tar.gz;name=azbox-dvb-modules-${MACHINE}"
-SRC_URI_azboxhd = "http://source.mynonpublic.com/${MACHINE}-dvb-modules-${KV}-oe-core-${SRCDATE}.tar.gz;name=azbox-dvb-modules-${MACHINE}"
 
-SRC_URI[azbox-dvb-modules-azboxhd.md5sum] = "0e9f349735ecae61fd9db76ea0da9985"
-SRC_URI[azbox-dvb-modules-azboxhd.sha256sum] = "c12bf66416d1faf4c3efb35b590f02ee0c255879d057fa553fb95037138c2d75"
 SRC_URI[azbox-dvb-modules-azboxme.md5sum] = "3d7b8d240626a08f16c170e5832be618"
 SRC_URI[azbox-dvb-modules-azboxme.sha256sum] = "48b48a94094ecce34398efcee7e17e780d9cce0ecf1510758078ed4e18f9ce6d"
 SRC_URI[azbox-dvb-modules-azboxminime.md5sum] = "2c037462af10a7909f4c803a90b82a1d"
@@ -31,17 +27,6 @@ INHIBIT_PACKAGE_STRIP = "1"
 do_compile() {
 }
 do_populate_sysroot() {
-}
-
-do_install_azboxhd() {
-    install -d ${D}/lib/modules/${KV}/extra
-    install -d ${D}/${sysconfdir}/modules-load.d
-    for i in llad em8xxx 863xi2c az_cx24116 az_mxl201rf az_mxl5007t az_stv6110x az_stv090x az_tda10023 az_zl10353 nimdetect sci 863xdvb; do
-        install -m 0755 ${WORKDIR}/$i.ko ${D}/lib/modules/${KV}/extra
-        echo $i >> ${D}/${sysconfdir}/modules-load.d/_${MACHINE}.conf
-    done
-    install -d ${D}/lib/firmware
-    install -m 0644 ${WORKDIR}/dvb-fe-cx24116.fw ${D}/lib/firmware/dvb-fe-cx24116.fw
 }
 
 do_install() {
