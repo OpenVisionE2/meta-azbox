@@ -15,7 +15,7 @@ SRCDATE_azboxhd = "19092013"
 PV = "${KV}+${SRCDATE}"
 
 SRC_URI = "http://source.mynonpublic.com/azbox/${MACHINE}-dvb-modules-${KV}-oe-core-${SRCDATE}.tar.gz;name=azbox-dvb-modules-${MACHINE}"
-SRC_URI_azboxhd = "http://source.mynonpublic.com/${MACHINE}-dvb-modules-${KV}-oe-core-${SRCDATE}.tar.gz;name=azbox-dvb-modules-${MACHINE}"
+SRC_URI_azboxhd = "file://${MACHINE}-dvb-modules-${KV}-oe-core-${SRCDATE}.tar.gz;name=azbox-dvb-modules-${MACHINE}"
 
 SRC_URI[azbox-dvb-modules-azboxhd.md5sum] = "0e9f349735ecae61fd9db76ea0da9985"
 SRC_URI[azbox-dvb-modules-azboxhd.sha256sum] = "c12bf66416d1faf4c3efb35b590f02ee0c255879d057fa553fb95037138c2d75"
