@@ -12,9 +12,9 @@ MACHINE_EXTRA_RRECOMMENDS += "\
     azbox-mrua \
     "
 
-DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dtsdownmix --with-azbox"
+DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dtsdownmix"
 
-MACHINE_FEATURES += " azbox alsa usbhost wifi nl80211 3dtv switchoff lpcm textlcd 32bpp hdtv dvbapi5 dvb-c blindscan-dvbs"
+MACHINE_FEATURES += "azbox alsa usbhost wifi nl80211 3dtv switchoff lpcm textlcd 32bpp hdtv dvbapi5 dvb-c blindscan-dvbs"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-azbox"
 PREFERRED_VERSION_linux-azbox = "3.9.2"
