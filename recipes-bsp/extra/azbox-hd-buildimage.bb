@@ -3,6 +3,8 @@ SECTION = "console/utils"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
+COMPATIBLE_MACHINE = "azboxhd"
+
 PV="1.3"
 
 SRC_URI = "file://pack_e2.c"
