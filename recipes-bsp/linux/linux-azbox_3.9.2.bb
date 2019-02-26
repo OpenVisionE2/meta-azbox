@@ -5,15 +5,19 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${KV}/COPYING;md5=d7810fab7487fb0aad
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "(azboxhd|azboxme|azboxminime)"
+COMPATIBLE_MACHINE = "azboxhd|azboxme|azboxminime"
 
 KV = "3.9.2"
 SRCDATE = "14092013"
 SRCDATE_azboxhd = "16092013"
 
-MACHINE_KERNEL_PR_append = ".2"
+MACHINE_KERNEL_PR_append = ".3"
+
+KERNEL_IMAGE_MAXSIZE_azboxhd = "6815744"
 
 DEPENDS = "genromfs-native virtual/${TARGET_PREFIX}gcc"
+DEPENDS_azboxhd = "genromfs-native azbox-hd-buildimage virtual/${TARGET_PREFIX}gcc"
+DEPENDS_azboxminime = "genromfs-native azbox-minime-packer virtual/${TARGET_PREFIX}gcc"
 
 inherit kernel machine_kernel_pr
 
@@ -50,6 +54,8 @@ SRC_URI += "${KERNELORG_MIRROR}/linux/kernel/v3.x/linux-${KV}.tar.bz2;name=azbox
     file://rtl8712-fix-warnings.patch \
     file://rtl8187se-fix-warnings.patch \
     file://kernel-add-support-for-gcc6.patch \
+    file://kernel-azbox-miscbuildfixes.patch \
+    file://kernel-azbox-fix-sata_tangox-platformdevice.patch \
     "
 
 SRC_URI_append_azboxhd = "file://initramfs-${MACHINE}-oe-core-${KV}-${SRCDATE}.tar.bz2;name=azbox-initrd-${MACHINE}"
@@ -72,18 +78,19 @@ export OS = "Linux"
 KERNEL_OBJECT_SUFFIX = "ko"
 KERNEL_OUTPUT = "zbimage-linux-xload"
 KERNEL_IMAGETYPE = "zbimage-linux-xload"
-KERNEL_IMAGEDEST = "tmp"
+KERNEL_IMAGEDEST = "/tmp"
 
-FILES_kernel-image = "/boot/zbimage-linux-xload"
+FILES_kernel-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KV}-opensat"
 
 CFLAGS_prepend = "-I${WORKDIR} "
 
-EXTRA_OEMAKE =+ " CONFIG_INITRAMFS_SOURCE=${STAGING_KERNEL_DIR}/initramfs"
+EXTRA_OEMAKE += "CONFIG_INITRAMFS_SOURCE=${STAGING_KERNEL_DIR}/initramfs"
 
 do_configure_prepend() {
 	oe_machinstall -m 0644 ${WORKDIR}/defconfig ${S}/.config
 	sed -i "s#:= usr/initramfs_default_node_list#:= \$(srctree)/usr/initramfs_default_node_list#" ${STAGING_KERNEL_DIR}/usr/Makefile
 	sed -i "s#\$(srctree)/arch/mips/boot/#\$(obj)/#" ${STAGING_KERNEL_DIR}/arch/mips/boot/Makefile
+        sed -i "s/ -static//" ${STAGING_KERNEL_DIR}/scripts/Makefile.host
 }
 
 kernel_do_compile_prepend() {
@@ -94,7 +101,12 @@ kernel_do_compile_prepend() {
 
 kernel_do_compile() {
 	unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS MACHINE
-	oe_runmake ${KERNEL_IMAGETYPE} CC="${KERNEL_CC}" LD="${KERNEL_LD}" ${KERNEL_EXTRA_ARGS}
+	oe_runmake ${KERNEL_IMAGETYPE} CC="${KERNEL_CC}" LD="${KERNEL_LD}" AR="${AR}" OBJDUMP="${OBJDUMP}" NM="${NM}" CONFIG_INITRAMFS_SOURCE="${STAGING_KERNEL_DIR}/initramfs"
+	oe_runmake modules CC="${KERNEL_CC}" LD="${KERNEL_LD}" AR="${AR}" OBJDUMP="${OBJDUMP}" CONFIG_INITRAMFS_SOURCE="${STAGING_KERNEL_DIR}/initramfs"
+}
+
+kernel_do_compile_append() {
+    rm -rf ${B}/arch/${ARCH}/boot/genzbf
 }
 
 # This is part of kernel.bbclass but doesn't get executed when not copied here
