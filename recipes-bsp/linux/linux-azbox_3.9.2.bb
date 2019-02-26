@@ -14,8 +14,6 @@ SRCDATE_azboxhd = "16092013"
 MACHINE_KERNEL_PR_append = ".3"
 
 DEPENDS = "genromfs-native virtual/${TARGET_PREFIX}gcc"
-DEPENDS_azboxhd = "genromfs-native azbox-hd-buildimage virtual/${TARGET_PREFIX}gcc"
-DEPENDS_azboxminime = "genromfs-native azbox-minime-packer virtual/${TARGET_PREFIX}gcc"
 
 inherit kernel machine_kernel_pr
 
