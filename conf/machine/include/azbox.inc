@@ -3,6 +3,8 @@ include conf/machine/include/build-extras.inc
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     azbox-dvb-modules \
+    enigma2-plugin-systemplugins-rtisys \	
+    enigma2-plugin-systemplugins-videosettingssetup \
     "
 
 DVBPROVIDER = "kernel"
