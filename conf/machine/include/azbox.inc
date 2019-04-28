@@ -1,6 +1,8 @@
 # We know about rtc
 include conf/machine/include/build-extras.inc
 
+BOX_BRAND = "azbox"
+
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     azbox-dvb-modules \
     enigma2-plugin-systemplugins-rtisys \	
