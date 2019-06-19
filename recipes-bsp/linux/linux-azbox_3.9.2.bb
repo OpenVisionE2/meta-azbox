@@ -11,8 +11,6 @@ KV = "3.9.2"
 SRCDATE = "14092013"
 SRCDATE_azboxhd = "16092013"
 
-MACHINE_KERNEL_PR_append = ".3"
-
 DEPENDS = "genromfs-native virtual/${TARGET_PREFIX}gcc"
 
 inherit kernel machine_kernel_pr
