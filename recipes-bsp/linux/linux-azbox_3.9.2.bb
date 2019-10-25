@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${KV}/COPYING;md5=d7810fab7487fb0aad
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "azboxhd|azboxme|azboxminime"
+COMPATIBLE_MACHINE = "^(azboxhd|azboxme|azboxminime)$"
 
 KV = "3.9.2"
 SRCDATE = "14092013"

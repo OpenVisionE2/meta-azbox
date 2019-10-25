@@ -3,7 +3,7 @@ SECTION = "console/utils"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
-PV="1.3"
+PV = "1.3"
 
 SRC_URI = "file://pack_e2.c"
 

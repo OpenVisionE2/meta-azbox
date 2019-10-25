@@ -6,7 +6,7 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "azboxhd|azboxme|azboxminime"
+COMPATIBLE_MACHINE = "^(azboxhd|azboxme|azboxminime)$"
 
 SRCDATE = "3.11-1"
 SRCDATE_azboxhd = "2.8-3"
