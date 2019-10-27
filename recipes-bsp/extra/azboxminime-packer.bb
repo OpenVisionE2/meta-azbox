@@ -3,6 +3,8 @@ SECTION = "console/utils"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
+COMPATIBLE_MACHINE = "^(azboxminime)$"
+
 PV = "1.4"
 
 SRC_URI = "file://pack_minime_image.c"
