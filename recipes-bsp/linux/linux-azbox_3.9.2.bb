@@ -51,8 +51,6 @@ SRC_URI += "${KERNELORG_MIRROR}/linux/kernel/v3.x/linux-${KV}.tar.bz2;name=azbox
     file://kernel-add-support-for-gcc6.patch \
     file://kernel-azbox-miscbuildfixes.patch \
     file://kernel-azbox-fix-sata_tangox-platformdevice.patch \
-    file://kernel-add-support-for-gcc7.patch \
-    file://kernel-add-support-for-gcc8.patch \
     file://log2-give-up-on-gcc-constant-optimizations.patch \
     file://cp1emu-do-not-use-bools-for-arithmetic.patch \
     "
@@ -79,7 +77,7 @@ KERNEL_OUTPUT = "zbimage-linux-xload"
 KERNEL_IMAGETYPE = "zbimage-linux-xload"
 KERNEL_IMAGEDEST = "tmp"
 
-FILES_kernel-image = "/boot/zbimage-linux-xload"
+FILES_${KERNEL_PACKAGE_NAME}-image = "/boot/zbimage-linux-xload"
 
 CFLAGS_prepend = "-I${WORKDIR} "
 
