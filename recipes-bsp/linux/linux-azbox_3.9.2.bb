@@ -23,6 +23,7 @@ ALLOW_EMPTY_kernel-dev = "1"
 
 SRC_URI += "${KERNELORG_MIRROR}/linux/kernel/v3.x/linux-${KV}.tar.bz2;name=azbox-kernel \
     file://defconfig \
+    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc9.patch \
     file://genzbf.c \
     file://sigblock.h \
     file://zboot.h \
