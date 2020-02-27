@@ -1,5 +1,5 @@
 # We know about rtc
-include conf/machine/include/build-extras.inc
+require conf/machine/include/build-extras.inc
 
 BOX_BRAND = "azbox"
 
@@ -29,6 +29,6 @@ GLIBC_EXTRA_OECONF = "--with-tls --with-__thread"
 
 require conf/machine/include/tune-mips32.inc
 require conf/machine/include/soc-family.inc
-include conf/machine/include/autoload-filesystems.inc
+require conf/machine/include/autoload-filesystems.inc
 
 SYSVINIT_ENABLED_GETTYS = ""
