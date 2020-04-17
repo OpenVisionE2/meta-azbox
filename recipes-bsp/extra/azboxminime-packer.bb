@@ -1,4 +1,4 @@
-SUMMARY = "Create Azbox MiniME webinterface update image"
+SUMMARY = "Create ${MACHINE} webinterface update image"
 SECTION = "console/utils"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc

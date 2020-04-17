@@ -1,4 +1,4 @@
-SUMMARY = "Azbox compatibility links"
+SUMMARY = "AZBox compatibility links"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
