@@ -13,7 +13,7 @@ SRCDATE_azboxhd = "16092013"
 
 DEPENDS = "genromfs-native virtual/${TARGET_PREFIX}gcc"
 
-inherit kernel machine_kernel_pr
+inherit kernel machine_kernel_pr samba_change_dialect
 
 PKG_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-base"
 PKG_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image"
