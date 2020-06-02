@@ -23,7 +23,6 @@ MACHINE_FEATURES += "azbox alsa usbhost wifi nl80211 3dtv switchoff lpcm textlcd
 PREFERRED_PROVIDER_virtual/kernel = "linux-azbox"
 PREFERRED_VERSION_linux-azbox = "3.9.2"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "azbox-blindscan-dvbs-utils"
-PREFERRED_VERSION_rt8812au = "4.3.14"
 
 GLIBC_EXTRA_OECONF = "--with-tls --with-__thread"
 
