@@ -1,0 +1,8 @@
+require azbox-mrua.inc
+
+COMPATIBLE_MACHINE = "^(azboxhd)$"
+
+SRCDATE = "2.8-3"
+
+SRC_URI[md5sum] = "2341ac101030721380513e95c60b157e"
+SRC_URI[sha256sum] = "3d01a3428135cfaaa0268de9e0734600657170078cbb8ed2aaaf76643bb1881f"

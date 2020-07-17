@@ -4,17 +4,14 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 BOX_BRAND = "azbox"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
+    azbox-compat \
     azbox-dvb-modules-${MACHINE} \
+    azbox-mrua-${MACHINE} \
     enigma2-plugin-systemplugins-rtisys \	
     enigma2-plugin-systemplugins-videosettingssetup \
     "
 
 DVBPROVIDER = "kernel"
-
-MACHINE_EXTRA_RRECOMMENDS += "\
-    azbox-compat \
-    azbox-mrua \
-    "
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dtsdownmix"
 
