@@ -4,7 +4,7 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 BOX_BRAND = "azbox"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    azbox-dvb-modules \
+    azbox-dvb-modules-${MACHINE} \
     enigma2-plugin-systemplugins-rtisys \	
     enigma2-plugin-systemplugins-videosettingssetup \
     "
