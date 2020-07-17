@@ -3,6 +3,7 @@ SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
+
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(azboxhd|azboxme|azboxminime)$"
@@ -30,14 +31,15 @@ INHIBIT_PACKAGE_STRIP = "1"
 
 do_compile() {
 }
+
 do_populate_sysroot() {
 }
 
 do_install_azboxhd() {
-    install -d ${D}/lib/modules/${KV}/extra
+    install -d ${D}${base_libdir}/modules/${KV}/extra
     install -d ${D}/${sysconfdir}/modules-load.d
     for i in llad em8xxx 863xi2c az_cx24116 az_mxl201rf az_mxl5007t az_stv6110x az_stv090x az_tda10023 az_zl10353 nimdetect sci 863xdvb; do
-        install -m 0755 ${WORKDIR}/$i.ko ${D}/lib/modules/${KV}/extra
+        install -m 0755 ${WORKDIR}/$i.ko ${D}${base_libdir}/modules/${KV}/extra
         echo $i >> ${D}/${sysconfdir}/modules-load.d/_${MACHINE}.conf
     done
     install -d ${D}/lib/firmware
@@ -45,10 +47,10 @@ do_install_azboxhd() {
 }
 
 do_install() {
-    install -d ${D}/lib/modules/${KV}/extra
+    install -d ${D}${base_libdir}/modules/${KV}/extra
     install -d ${D}/${sysconfdir}/modules-load.d
     for i in llad em8xxx 865xi2c avl6211 avl2108 mxl241sf nimdetect sci 865xdvb; do
-        install -m 0755 ${WORKDIR}/$i.ko ${D}/lib/modules/${KV}/extra
+        install -m 0755 ${WORKDIR}/$i.ko ${D}${base_libdir}/modules/${KV}/extra
         echo $i >> ${D}/${sysconfdir}/modules-load.d/_${MACHINE}.conf
     done
     install -d ${D}/lib/firmware
@@ -57,4 +59,4 @@ do_install() {
     install -m 0644 ${WORKDIR}/dvb-fe-avl6211.fw ${D}/lib/firmware/dvb-fe-avl6211.fw
 }
 
-FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf /lib/firmware/* /lib/modules/${KV}/extra"
+FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf /lib/firmware/* ${base_libdir}/modules/${KV}/extra"
