@@ -15,7 +15,7 @@ DVBPROVIDER = "kernel"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dtsdownmix"
 
-MACHINE_FEATURES += "azbox alsa usbhost nl80211 switchoff lpcm textlcd 32bpp dvbapi5 dvb-c blindscan-dvbs"
+MACHINE_FEATURES += "azbox alsa usbhost nl80211 switchoff lpcm textlcd 32bpp dvbapi5 dvb-c blindscan-dvbs HDMI"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-azbox"
 PREFERRED_VERSION_linux-azbox = "3.9.2"
