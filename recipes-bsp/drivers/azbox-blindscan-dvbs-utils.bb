@@ -4,9 +4,6 @@ PRIORITY = "optional"
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
-COMPATIBLE_MACHINE = "^(azboxhd|azboxme|azboxminime)$"
-
-PACKAGE_ARCH = "${MACHINE_ARCH}"
 SRC_URI = "http://source.mynonpublic.com/azbox/azbox-blindscan-utils-${MACHINE}-${PV}.tar.bz2;name=azbox-blind-${MACHINE}"
 
 SRC_URI[azbox-blind-azboxhd.md5sum] = "0f536da981f694d821ea4f9c18e660c2"
@@ -35,3 +32,5 @@ do_prepare_recipe_sysroot[noexec] = "1"
 INHIBIT_PACKAGE_STRIP = "1"
 do_compile[noexec] = "1"
 deltask do_populate_sysroot
+
+BLINDSCAN_BINARY = "avl_azbox_blindscan"
