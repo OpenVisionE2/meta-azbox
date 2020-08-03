@@ -26,6 +26,5 @@ GLIBC_EXTRA_OECONF = "--with-tls --with-__thread"
 require conf/machine/include/tune-mips32.inc
 require conf/machine/include/soc-family.inc
 
-KERNEL_MODULE_AUTOLOAD += "xfs"
 
 SYSVINIT_ENABLED_GETTYS = ""
