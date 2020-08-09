@@ -5,7 +5,6 @@ LICENSE = "CLOSED"
 
 require conf/license/license-close.inc
 
-PV = "1.0"
 
 do_install() {
     install -d ${D}/lib

@@ -7,7 +7,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(azboxhd|azboxme|azboxminime)$"
 
-KV = "3.9.2"
+KV = "${KERNELVERSION}"
 SRCDATE = "14092013"
 SRCDATE_azboxhd = "16092013"
 
@@ -21,38 +21,38 @@ RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "${KERNEL_PACKAGE_NAME}-${KERNEL_VERSION
 RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_VERSION}"
 ALLOW_EMPTY_kernel-dev = "1"
 
-SRC_URI += "${KERNELORG_MIRROR}/linux/kernel/v3.x/linux-${KV}.tar.bz2;name=azbox-kernel \
-    file://defconfig \
-    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
-    file://genzbf.c \
-    file://sigblock.h \
-    file://zboot.h \
-    file://emhwlib_registers_tango2.h \
-    file://kernel-3.9.2.patch \
-    file://add-dmx-source-timecode.patch \
-    file://af9015-output-full-range-SNR.patch \
-    file://af9033-output-full-range-SNR.patch \
-    file://as102-adjust-signal-strength-report.patch \
-    file://as102-scale-MER-to-full-range.patch \
-    file://cinergy_s2_usb_r2.patch \
-    file://cxd2820r-output-full-range-SNR.patch \
-    file://dvb-usb-dib0700-disable-sleep.patch \
-    file://dvb_usb_disable_rc_polling.patch \
-    file://it913x-switch-off-PID-filter-by-default.patch \
-    file://tda18271-advertise-supported-delsys.patch \
-    file://fix-dvb-siano-sms-order.patch \
-    file://mxl5007t-add-no_probe-and-no_reset-parameters.patch \
-    file://nfs-max-rwsize-8k.patch \
-    file://0001-rt2800usb-add-support-for-rt55xx.patch \
-    file://0001-Revert-MIPS-Fix-potencial-corruption.patch \
-    file://linux-3.9.7-gcc-4.9.3-build-error-fixed.patch \
-    file://rtl8712-fix-warnings.patch \
-    file://rtl8187se-fix-warnings.patch \
-    file://kernel-azbox-miscbuildfixes.patch \
-    file://kernel-azbox-fix-sata_tangox-platformdevice.patch \
-    file://0002-cp1emu-do-not-use-bools-for-arithmetic.patch \
-    file://0003-log2-give-up-on-gcc-constant-optimizations.patch \
-    "
+SRC_URI = "${KERNELORG_MIRROR}/linux/kernel/v3.x/linux-${KV}.tar.bz2;name=azbox-kernel \
+	file://defconfig \
+	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
+	file://genzbf.c \
+	file://sigblock.h \
+	file://zboot.h \
+	file://emhwlib_registers_tango2.h \
+	file://kernel-3.9.2.patch \
+	file://add-dmx-source-timecode.patch \
+	file://af9015-output-full-range-SNR.patch \
+	file://af9033-output-full-range-SNR.patch \
+	file://as102-adjust-signal-strength-report.patch \
+	file://as102-scale-MER-to-full-range.patch \
+	file://cinergy_s2_usb_r2.patch \
+	file://cxd2820r-output-full-range-SNR.patch \
+	file://dvb-usb-dib0700-disable-sleep.patch \
+	file://dvb_usb_disable_rc_polling.patch \
+	file://it913x-switch-off-PID-filter-by-default.patch \
+	file://tda18271-advertise-supported-delsys.patch \
+	file://fix-dvb-siano-sms-order.patch \
+	file://mxl5007t-add-no_probe-and-no_reset-parameters.patch \
+	file://nfs-max-rwsize-8k.patch \
+	file://0001-rt2800usb-add-support-for-rt55xx.patch \
+	file://0001-Revert-MIPS-Fix-potencial-corruption.patch \
+	file://linux-3.9.7-gcc-4.9.3-build-error-fixed.patch \
+	file://rtl8712-fix-warnings.patch \
+	file://rtl8187se-fix-warnings.patch \
+	file://kernel-azbox-miscbuildfixes.patch \
+	file://kernel-azbox-fix-sata_tangox-platformdevice.patch \
+	file://0002-cp1emu-do-not-use-bools-for-arithmetic.patch \
+	file://0003-log2-give-up-on-gcc-constant-optimizations.patch \
+	"
 
 SRC_URI_append_azboxhd = "file://initramfs-${MACHINE}-oe-core-${KV}-${SRCDATE}.tar.bz2;name=azbox-initrd-${MACHINE}"
 SRC_URI_append_azboxme = "http://source.mynonpublic.com/azbox/initramfs-${MACHINE}-oe-core-${KV}-${SRCDATE}.tar.bz2;name=azbox-initrd-${MACHINE}"

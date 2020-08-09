@@ -6,7 +6,7 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-KV = "3.9.2-opensat"
+KV = "${KERNELVERSION}-opensat"
 
 PV = "${KV}+${SRCDATE}"
 
