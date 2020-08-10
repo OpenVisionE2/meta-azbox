@@ -7,7 +7,6 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(azboxhd|azboxme|azboxminime)$"
 
-KV = "${KERNELVERSION}"
 SRCDATE = "14092013"
 SRCDATE_azboxhd = "16092013"
 
