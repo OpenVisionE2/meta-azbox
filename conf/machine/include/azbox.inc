@@ -33,3 +33,5 @@ require conf/machine/include/tune-mips32.inc
 require conf/machine/include/soc-family.inc
 
 SYSVINIT_ENABLED_GETTYS = ""
+
+BLINDSCAN_BINARY = "avl_azbox_blindscan"

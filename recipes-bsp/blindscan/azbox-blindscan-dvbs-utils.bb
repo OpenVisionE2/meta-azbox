@@ -32,5 +32,3 @@ do_prepare_recipe_sysroot[noexec] = "1"
 INHIBIT_PACKAGE_STRIP = "1"
 do_compile[noexec] = "1"
 deltask do_populate_sysroot
-
-BLINDSCAN_BINARY = "avl_azbox_blindscan"
