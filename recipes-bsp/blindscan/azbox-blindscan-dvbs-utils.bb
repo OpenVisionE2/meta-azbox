@@ -24,8 +24,8 @@ PV = "1.3"
 S = "${WORKDIR}/blindscan-utils"
 
 do_install() {
-    install -d "${D}/${bindir}"
-    install -m 0755 "${S}/avl_azbox_blindscan" "${D}/${bindir}"
+    install -d "${D}${bindir}"
+    install -m 0755 "${S}/${BLINDSCAN_BINARY}" "${D}${bindir}"
 }
 
 do_prepare_recipe_sysroot[noexec] = "1"

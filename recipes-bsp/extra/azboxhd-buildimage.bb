@@ -14,8 +14,8 @@ do_compile() {
 }
 
 do_install() {
-    install -d ${D}/${bindir}/
-    install -m 0755 ${S}/pack_e2 ${D}/${bindir}/
+    install -d ${D}${bindir}/
+    install -m 0755 ${S}/pack_e2 ${D}${bindir}/
 }
 
 BBCLASSEXTEND = "native"

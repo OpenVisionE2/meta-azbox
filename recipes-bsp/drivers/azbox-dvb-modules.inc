@@ -24,13 +24,13 @@ FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf /lib/firmware/* ${
 
 do_install() {
     install -d ${D}${base_libdir}/modules/${KV}/extra
-    install -d ${D}/${sysconfdir}/modules-load.d
+    install -d ${D}${sysconfdir}/modules-load.d
     for i in llad em8xxx 865xi2c avl6211 avl2108 mxl241sf nimdetect sci 865xdvb; do
         install -m 0755 ${WORKDIR}/$i.ko ${D}${base_libdir}/modules/${KV}/extra
-        echo $i >> ${D}/${sysconfdir}/modules-load.d/_${MACHINE}.conf
+        echo $i >> ${D}${sysconfdir}/modules-load.d/_${MACHINE}.conf
     done
-    install -d ${D}/lib/firmware
-    install -m 0644 ${WORKDIR}/dvb-fe-avl2108.fw ${D}/lib/firmware/dvb-fe-avl2108.fw
-    install -m 0644 ${WORKDIR}/dvb-fe-avl2108-blind.fw ${D}/lib/firmware/dvb-fe-avl2108-blind.fw
-    install -m 0644 ${WORKDIR}/dvb-fe-avl6211.fw ${D}/lib/firmware/dvb-fe-avl6211.fw
+    install -d ${D}${base_libdir}/firmware
+    install -m 0644 ${WORKDIR}/dvb-fe-avl2108.fw ${D}${base_libdir}/firmware/dvb-fe-avl2108.fw
+    install -m 0644 ${WORKDIR}/dvb-fe-avl2108-blind.fw ${D}${base_libdir}/firmware/dvb-fe-avl2108-blind.fw
+    install -m 0644 ${WORKDIR}/dvb-fe-avl6211.fw ${D}${base_libdir}/firmware/dvb-fe-avl6211.fw
 }

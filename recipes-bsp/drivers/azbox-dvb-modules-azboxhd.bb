@@ -11,11 +11,11 @@ SRC_URI[sha256sum] = "c12bf66416d1faf4c3efb35b590f02ee0c255879d057fa553fb9503713
 
 do_install() {
     install -d ${D}${base_libdir}/modules/${KV}/extra
-    install -d ${D}/${sysconfdir}/modules-load.d
+    install -d ${D}${sysconfdir}/modules-load.d
     for i in llad em8xxx 863xi2c az_cx24116 az_mxl201rf az_mxl5007t az_stv6110x az_stv090x az_tda10023 az_zl10353 nimdetect sci 863xdvb; do
         install -m 0755 ${WORKDIR}/$i.ko ${D}${base_libdir}/modules/${KV}/extra
-        echo $i >> ${D}/${sysconfdir}/modules-load.d/_${MACHINE}.conf
+        echo $i >> ${D}${sysconfdir}/modules-load.d/_${MACHINE}.conf
     done
-    install -d ${D}/lib/firmware
-    install -m 0644 ${WORKDIR}/dvb-fe-cx24116.fw ${D}/lib/firmware/dvb-fe-cx24116.fw
+    install -d ${D}${base_libdir}/firmware
+    install -m 0644 ${WORKDIR}/dvb-fe-cx24116.fw ${D}${base_libdir}/firmware/dvb-fe-cx24116.fw
 }
