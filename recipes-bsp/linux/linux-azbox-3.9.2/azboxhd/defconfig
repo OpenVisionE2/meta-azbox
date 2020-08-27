@@ -1772,7 +1772,6 @@ CONFIG_HID_MICROSOFT=m
 # CONFIG_HID_THRUSTMASTER is not set
 # CONFIG_HID_WACOM is not set
 # CONFIG_HID_WIIMOTE is not set
-# CONFIG_HID_THRUSTMASTER is not set
 # CONFIG_HID_ZEROPLUS is not set
 # CONFIG_HID_ZYDACRON is not set
 # CONFIG_HID_SENSOR_HUB is not set
@@ -2038,6 +2037,10 @@ CONFIG_RTC_LIB=y
 # Microsoft Hyper-V guest support
 #
 CONFIG_STAGING=y
+CONFIG_ZRAM=m
+# CONFIG_ZRAM_DEBUG is not set
+CONFIG_ZSMALLOC=m
+# CONFIG_ZSMALLOC_STAT is not set
 # CONFIG_ET131X is not set
 # CONFIG_USBIP_CORE is not set
 CONFIG_W35UND=m
@@ -2066,9 +2069,6 @@ CONFIG_R8712U=m
 # CONFIG_USB_ENESTORAGE is not set
 # CONFIG_BCM_WIMAX is not set
 # CONFIG_FT1000 is not set
-CONFIG_ZRAM=m
-# CONFIG_ZRAM_DEBUG is not set
-CONFIG_ZSMALLOC=m
 
 #
 # Speakup console speech
