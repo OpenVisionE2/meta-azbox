@@ -34,4 +34,28 @@ require conf/machine/include/soc-family.inc
 
 SYSVINIT_ENABLED_GETTYS = ""
 
+KERNEL_EXTRA_CMD = "--disable-compressor=lzo "
+
+IMAGE_FSTYPES ?= "jffs2"
+
+EXTRA_IMAGECMD_jffs2 = " -p 0x800 -e 0x20000 -n -l"
+
+IMAGE_CMD_jffs2_prepend = " \
+    mkdir -p ${DEPLOY_DIR_IMAGE}/USB; \
+    mkdir -p ${DEPLOY_DIR_IMAGE}/WEBIF; \
+    rm -fR ${IMAGE_ROOTFS}/boot/*; \
+    mkfs.jffs2 \
+        --root=${IMAGE_ROOTFS} \
+        --faketime \
+        ${KERNEL_EXTRA_CMD} \
+        --compression-mode=size \
+        --output=${DEPLOY_DIR_IMAGE}/image0.jffs2 \
+        ${EXTRA_IMAGECMD}; \
+    "
+
 BLINDSCAN_BINARY = "avl_azbox_blindscan"
+
+TARGET_ARCH = "mipsel"
+DEFAULTTUNE = "mips32el"
+
+RCNAME = "azboxme"
