@@ -53,6 +53,10 @@ IMAGE_CMD_jffs2_prepend = " \
         ${EXTRA_IMAGECMD}; \
     "
 
+IMAGE_CMD_jffs2_prepend = "\
+    rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
+    "
+
 BLINDSCAN_BINARY = "avl_azbox_blindscan"
 
 TARGET_ARCH = "mipsel"
