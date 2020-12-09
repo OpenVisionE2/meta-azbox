@@ -17,9 +17,6 @@ INHIBIT_PACKAGE_STRIP = "1"
 do_compile() {
 }
 
-do_populate_sysroot() {
-}
-
 FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf /lib/firmware/* ${nonarch_base_libdir}/modules/${KV}/extra"
 
 do_install() {
