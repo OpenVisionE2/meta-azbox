@@ -9,8 +9,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	azbox-compat \
 	azbox-dvb-modules-${MACHINE} \
 	azbox-mrua-${MACHINE} \
-	enigma2-plugin-systemplugins-rtisys \	
-	enigma2-plugin-systemplugins-videosettingssetup \
 	"
 
 EXTRA_IMAGEDEPENDS += "\
